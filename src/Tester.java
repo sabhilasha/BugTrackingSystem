@@ -1,6 +1,7 @@
 
 public class Tester extends Employee{
 	private static BUGSTATUS status =BUGSTATUS.NEW;
+	private static BUGTYPE type =BUGTYPE.ARITHMETIC;
 	private static int count =0;
 	private static int count2 =0;
 	public static void main(String[] args) {
@@ -11,7 +12,8 @@ public class Tester extends Employee{
 	}
 	public static void testing() {
 		Manager  manager = new Manager();
-		manager.assignBug();
+		String step = manager.assignBug();
+		System.out.println(step);
 		//run the code and find the bug
 		if(count==0) {
 			count++;
@@ -34,7 +36,7 @@ public class Tester extends Employee{
 		
 	}
 		
-	   static void addNewBug() {
+	 public static BUGTYPE addNewBug() {
 		Bug bug = new Bug();
 		bug.setId(7365);
 		bug.setName("Abug");
@@ -45,6 +47,7 @@ public class Tester extends Employee{
 		Developer developer = new Developer();
 		System.out.println("Step1");
 		developer.bugAnalyzing(bug.getId(),bug.getName());
+		return type;
 		
 		
 		
@@ -53,7 +56,7 @@ public class Tester extends Employee{
 		
 	//}
 	   
-	public static void retest(int id,String name,int c) {
+	public static BUGSTATUS retest(int id,String name,int c) {
 		Manager manage = new Manager();
 		if (c==1) {
 		status = BUGSTATUS.RETEST;
@@ -65,10 +68,12 @@ public class Tester extends Employee{
 			status = BUGSTATUS.CLOSED;
 			System.out.println(status);
 			System.out.println("completed");
-			manage.acknowledgeReport();
+			String step2 = manage.acknowledgeReport();
+			System.out.println(step2);
 	
 			
 		}
+		return status;
 		}
 		
 		

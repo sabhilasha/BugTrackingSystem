@@ -14,6 +14,10 @@ public class Bug {
 	}
 	public void setName(String name) {
 		this.name = name;
+		if(name== null) {
+			
+		}
+		
 	}
 	public String getPriority() {
 		return priority;

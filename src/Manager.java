@@ -1,11 +1,14 @@
 
 public class Manager extends Employee {
-	public void assignBug() {
-		System.out.println("bug assighned");
+	public String assignBug() {
+		return "bug assigned";
+		
+		//System.out.println("bug assighned");
 		
 	}
-	public void acknowledgeReport() {
-		System.out.println("bugsolved");
+	public String acknowledgeReport() {
+		return "bug resolved";
+		//System.out.println("bugsolved");
 		
 	}
 
